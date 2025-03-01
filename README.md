@@ -30,4 +30,4 @@ A **Streamlit-powered workout planner** that helps you **randomly select exercis
    ```  
 
 ## **Live Demo 🌐**  
-[Click here to try it!](https://your-app.streamlit.app)  
+[Click here to try it!](https://workout-randomizer.streamlit.app/)  
