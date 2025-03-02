@@ -68,28 +68,31 @@ workouts = {
     }
 }
 
-def get_workout(muscle_group, num_exercises):
-    if muscle_group not in workouts:
-        return []
-    
-    muscle_parts = list(workouts[muscle_group].keys())
-    selected_parts = random.sample(muscle_parts, min(num_exercises, len(muscle_parts)))
-    
-    selected_exercises = []
-    for part in selected_parts:
-        exercise = random.choice(workouts[muscle_group][part])
-        selected_exercises.append(exercise)
+def get_workout(muscle_group, muscle_part, num_exercises):
+    if muscle_part != "All":
+        selected_exercises = random.sample(workouts[muscle_group][muscle_part], num_exercises)
+    else:
+        muscle_parts = list(workouts[muscle_group].keys())
+        selected_parts = random.sample(muscle_parts, min(num_exercises, len(muscle_parts)))
+
+        selected_exercises = []
+        for part in selected_parts:
+            exercise = random.choice(workouts[muscle_group][part])
+            selected_exercises.append(exercise)
 
     return selected_exercises
 
 # Streamlit UI
-st.title("Random Workout Generator")
-muscle_group = st.selectbox("Choose a muscle group:", list(workouts.keys()))
+st.title("Workout Generator")
+muscle_group = st.selectbox("Select Muscle Group", list(workouts.keys()))
+muscle_part = st.selectbox("Select Muscle Part", ["All"] + list(workouts[muscle_group].keys()))
 max_exercises = len(workouts[muscle_group])
-num_exercises = st.slider("Number of exercises:", min_value=1, max_value=max_exercises, value=max_exercises, step=1)
+slider_disabled = (muscle_part != "All")
+slider_value = 1 if slider_disabled else max_exercises
+num_exercises = st.slider("Number of Exercises", 1, max_exercises, slider_value, disabled=slider_disabled)
 
 if st.button("Generate Workout"):
-    exercises = get_workout(muscle_group, num_exercises)
+    exercises = get_workout(muscle_group, muscle_part, num_exercises)
     for exercise, img_urls in exercises:
         st.subheader(exercise)
         for img_url in img_urls:
