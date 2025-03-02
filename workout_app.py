@@ -85,7 +85,8 @@ def get_workout(muscle_group, num_exercises):
 # Streamlit UI
 st.title("Random Workout Generator")
 muscle_group = st.selectbox("Choose a muscle group:", list(workouts.keys()))
-num_exercises = st.slider("Number of exercises:", min_value=1, max_value=5, value=3, step=1)
+max_exercises = len(workouts[muscle_group])
+num_exercises = st.slider("Number of exercises:", min_value=1, max_value=max_exercises, value=3, step=1)
 
 if st.button("Generate Workout"):
     exercises = get_workout(muscle_group, num_exercises)
