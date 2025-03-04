@@ -16,7 +16,7 @@ workouts = {
                          ("Dumbbell Bench Press", ["https://hips.hearstapps.com/hmg-prod/images/dumbbell-bench-press-640733e6e6d2c.jpg"]),
                          ("Chest Press", ["https://training.fit/wp-content/uploads/2020/02/brustpresse-flach-800x448.png"]),
                          ("Svend Press", ["https://liftmanual.com/wp-content/uploads/2023/04/dumbbell-svend-press.jpg"]),
-                         ("Dumbbell Fly", ["https://bodybuilding-wizard.com/wp-content/uploads/2014/05/flat-bench-dumbbell-flyes.jpg"]),
+                         ("Dumbbell Fly", ["https://training.fit/wp-content/uploads/2019/02/fliegende-flachbank-kurzhanteln-1.png"]),
                          ("Cable Chest Fly", ["https://training.fit/wp-content/uploads/2020/02/fliegende-kabelzug.png"]),
                          ("Butterfly Machine", ["https://training.fit/wp-content/uploads/2020/02/butterflys-800x448.png"]),
                          ("Push-Ups", ["https://i.ytimg.com/vi/M2avll-yrtE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCcf77Gi3tqUmnv05erv_CRw05JTA"])],
